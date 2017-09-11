@@ -18,6 +18,7 @@ class VCFMetadata:
             # Find all meta data lines starting with #.
             self.raw_meta_data = [line.rstrip('\n') for line in vcf_handler
                                   if line.startswith('#')]
+        # Get number of meta data lines.
         self.meta_data_length = len(self.raw_meta_data)
         # Raise ValueError if no meta data was able to be parsed.
         if self.meta_data_length == 0:
@@ -25,6 +26,5 @@ class VCFMetadata:
                              'Check input for proper formatting.')
         # Strip # and split last line of meta data to get headers.
         self.headers = self.raw_meta_data[-1][1:].split('\t')
-        # Get number of meta data lines.
 
         #TODO parse rest of meta data?
