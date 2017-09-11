@@ -1,11 +1,12 @@
 from vcf_parser import VCFParser
 import os
 import pandas
+import requests
 
 class VCFAnnotate:
-    def __init__(self, vcf_file, local_only, output):
+    def __init__(self, vcf_file, local, output):
         self.file_name = vcf_file
-        self.skip_api = local_only
+        self.local_only = local
         self.out_path = output
 
     def parse(self):
@@ -25,7 +26,6 @@ class VCFAnnotate:
             fields = self.split_info_field(row)
             variant_type.append(fields['TYPE'])
             depth_per_base.append(fields['DPB'])
-            # Replace commas w periods to sanitize malformed floats.
             var_alleles = fields['AO']
             ref_alleles = int(fields['RO'])
             # Sum observations for multiple variants.
@@ -44,7 +44,7 @@ class VCFAnnotate:
                 # Percent variant is 100% where no ref obs where found.
                 var_vs_ref = 1.00
 
-             # Convert back to string and format to two decimals.
+            # Convert back to string and format to two decimals.
             percent_variant.append( '%.2f' % var_vs_ref)
 
         fields_df = pandas.DataFrame({'TYPE': variant_type,
@@ -70,4 +70,12 @@ class VCFAnnotate:
             info[field[0]] = field[1]
 
         return info
+
+    def get_exac_api_request(self, variant):
+        request_url = 'http://exac.hms.harvard.edu/rest/variant/variant/'
+                      + variant 
+        response = requests.get(url=request_url).json() # TODO check other args 
+
+
+
 
