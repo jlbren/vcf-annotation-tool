@@ -20,12 +20,12 @@ A python utility for annotating Variant Call Format (VCF) files with supporting 
 * input_file: Input VCF file to be annotated.
 
 *optional arguments:*                  
-  * -h, --help
-   * Show this help message and exit
-  * --local-only
-   * Optional flag to skip calls to ExAC API.
-  * -o OUTPUT, --output
-   * Optional flag to specify output directory. Defaults to current working directory.
+  * -h, --help  
+    * Show this help message and exit
+  * --local-only  
+    * Optional flag to skip calls to ExAC API.
+  * -o OUTPUT, --output  
+    * Optional flag to specify output directory. Defaults to current working directory.
 ## Output
 
 The following table provides a summary of each colomn in the output file. 
