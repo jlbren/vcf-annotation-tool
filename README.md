@@ -42,7 +42,7 @@ The following table provides a summary of each colomn in the output file.
 | AO          | Alternate (variant) allele observation count.                                            | int    |
 | AO/RO       | Alternate allele observations / Reference allele observations.                           | float  |
 | ALLELE_FREQ | Allele frequency of variant from ExAC Project.                                           | float  |
-| GENE        | Effected gene(s) ENSEMBLE ID(s) from ExAC Project. Multiple entries semicolon delimited. | string |
+| GENE        | Effected gene(s) Ensembl ID(s) from ExAC Project. Multiple entries semicolon delimited.  | string |
 | CONSEQUENCE | Variant consequence effect(s) from ExAC Project. Multiple entries semicolon delimited.   | string |
 
 ### Contact
