@@ -22,6 +22,10 @@ def main():
     va = VCFAnnotate(args.input_file[0], args.local_only, args.output)
     # Parse VCF file. 
     va.parse()
+    # Generate annotations.
     va.annotate()
+    # Write annotation table out to csv. 
+    va.write_out() 
+
 main()
 
