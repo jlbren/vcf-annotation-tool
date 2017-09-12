@@ -14,15 +14,18 @@ A python utility for annotating Variant Call Format (VCF) files with supporting 
 3. Open terminal in desired install directory and copy/clone git project: `git clone https://github.com/jlbren/vcf-annotation-tool`.
 
 ## Usage 
-**VCFAnnotate [-h] [--local-only] [-o OUTPUT] input_file**
+**variant_annotation_tool.py [-h] [--local-only] [-o OUTPUT] input_file**
 
 *positional arguments:*      
 * input_file: Input VCF file to be annotated.
 
 *optional arguments:*                  
-  * -h, --help: Show this help message and exit
-  * --local-only: Optional flag to skip calls to ExAC API.
-  * -o OUTPUT, --output: Optional flag to specify output directory. Defaults to current working directory.
+  * -h, --help
+   * Show this help message and exit
+  * --local-only
+   * Optional flag to skip calls to ExAC API.
+  * -o OUTPUT, --output
+   * Optional flag to specify output directory. Defaults to current working directory.
 ## Output
 
 The following table provides a summary of each colomn in the output file. 
@@ -34,9 +37,9 @@ The following table provides a summary of each colomn in the output file.
 | VARIANT     | Variant allele sequence.                                                                 | string |
 | REF         | Reference allele sequence.                                                               | string |
 | TYPE        | Mutation type annotation.                                                                | string |
-| DPB         | Total read death per base pair.                                                          | float  |
+| DPB         | Total read depth per base pair.                                                          | float  |
 | AO          | Alternate (variant) allele observation count.                                            | int    |
-| AO/RO       | Alternate allele observations / Reference allele observations                            | float  |
+| AO/RO       | Alternate allele observations / Reference allele observations.                           | float  |
 | ALLELE_FREQ | Allele frequency of variant from ExAC Project.                                           | float  |
 | GENE        | Effected gene(s) ENSEMBLE ID(s) from ExAC Project. Multiple entries semicolon delimited. | string |
 | CONSEQUENCE | Variant consequence effect(s) from ExAC Project. Multiple entries semicolon delimited.   | string |
