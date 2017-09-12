@@ -17,7 +17,8 @@ A python utility for annotating Variant Call Format (VCF) files with supporting 
 **variant_annotation_tool.py [-h] [--local-only] [-o OUTPUT] input_file**
 
 *positional arguments:*      
-* input_file: Input VCF file to be annotated.
+* input_file  
+  * Input VCF file to be annotated.
 
 *optional arguments:*                  
   * -h, --help  
