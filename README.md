@@ -29,7 +29,7 @@ A python utility for annotating Variant Call Format (VCF) files with supporting 
     * Optional flag to specify output directory. Defaults to current working directory.
 ## Output
 
-The following table provides a summary of each colomn in the output file. 
+The following table provides a summary of each column in the output file. 
 
 | KEY         | DESCRIPTION                                                                              | TYPE   |
 |-------------|------------------------------------------------------------------------------------------|--------|
